@@ -10,7 +10,7 @@ COPY . .
 RUN go mod download
 RUN go mod verify
 
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" ./cmd/drizzle
+RUN CGO_ENABLED=0 go build ./cmd/drizzle
 
 # Build image
 FROM golang@sha256:8c7994cfdf4d488799d40d85d83bd41c7fd290e8eed1affc2abd386150750d2d
