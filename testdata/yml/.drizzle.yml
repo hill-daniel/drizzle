@@ -1,0 +1,13 @@
+variables:
+  PATH: '/test/kk'
+stages:
+  - name: build
+    execute:
+      - go build
+  - name: test
+    execute:
+      - go test
+      - golint ./...
+  - name: deploy
+    branches:
+      - main
